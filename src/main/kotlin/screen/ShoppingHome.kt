@@ -1,3 +1,5 @@
+package screen
+
 class ShoppingHome {
 
     fun start(){
@@ -18,28 +20,10 @@ class ShoppingHome {
             """.trimIndent()
         )
     }
-    private fun showCategories() {
-        val categories = arrayOf("fassion", "electonics", "veterian")
-        for (category in categories) {
-            println(category)
-        }
 
-        println("=> if you want to go pocket input #")
-
-        var selectedCategory = readLine()
-        while (selectedCategory.isNullOrBlank()) {
-            println("please input value")
-            selectedCategory = readLine()
-        }
-
-        if (selectedCategory == "#") {
-            // TODO 1. move to pocket
-        } else {
-            // TODO 2. show category
-            // TODO 3. if not in value
-        }
+    private fun showCategories(){
+        val shoppingCategory = ShoppingCategory()
+        shoppingCategory.showCategories()
     }
-
-
 
 }
