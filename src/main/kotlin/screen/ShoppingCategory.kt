@@ -1,5 +1,7 @@
 package screen
 
+import extensions.getNotEmptyString
+
 class ShoppingCategory {
 
     fun showCategories() {
@@ -10,12 +12,7 @@ class ShoppingCategory {
 
         println("=> if you want to go pocket input #")
 
-        var selectedCategory = readLine()
-        while (selectedCategory.isNullOrBlank()) {
-            println("please input value")
-            selectedCategory = readLine()
-        }
-
+        val selectedCategory = readLine().getNotEmptyString()
         if (selectedCategory == "#") {
             val shoppingCart = ShoppingCart()
             shoppingCart.showCartItems()
