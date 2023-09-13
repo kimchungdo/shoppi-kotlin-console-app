@@ -3,7 +3,7 @@ package screen
 class ShoppingCategory {
 
     fun showCategories() {
-        val categories = arrayOf("fassion", "electonics", "veterian")
+        val categories = arrayOf("패션", "전자기기", "반려동물용품")
         for (category in categories) {
             println(category)
         }
@@ -17,11 +17,13 @@ class ShoppingCategory {
         }
 
         if (selectedCategory == "#") {
-            // TODO 1. move to pocket
+            val shoppingCart = ShoppingCart()
+            shoppingCart.showCartItems()
         } else {
 
             if(categories.contains(selectedCategory)){
-                // TODO 2. show category
+                val shoppingProductList = ShoppingProductList()
+                shoppingProductList.showProducts(selectedCategory)
             }else{
                 showErrorMessage(selectedCategory)
             }
